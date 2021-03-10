@@ -201,8 +201,10 @@
     <ResourceCompile Include="resource.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Assets\barricadecar1_u1_v1.jpg" />
     <Image Include="cup.jpg" />
     <Image Include="directx.ico" />
+    <Image Include="viking-room.png" />
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="settings.manifest" />

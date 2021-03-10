@@ -65,6 +65,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
             nullptr);
         // TODO: Change to CreateWindowExW(WS_EX_TOPMOST, L"Direct3D12_BenchmarkWindowClass", L"Direct3D12-Benchmark", WS_POPUP,
         // to default to fullscreen.
+       
 
         if (!hwnd)
             return 1;

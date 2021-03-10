@@ -34,6 +34,12 @@
     <Image Include="cup.jpg">
       <Filter>Assets</Filter>
     </Image>
+    <Image Include="Assets\barricadecar1_u1_v1.jpg">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="viking-room.png">
+      <Filter>Assets</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="settings.manifest">

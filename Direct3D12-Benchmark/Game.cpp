@@ -68,7 +68,7 @@ void Game::Update(DX::StepTimer const& timer)
 
     float time = float(timer.GetTotalSeconds());
 
-    m_world = Matrix::CreateRotationX(time * 2.f);
+    m_world = Matrix::CreateRotationX(time);
     elapsedTime;
 }
 
@@ -302,8 +302,7 @@ void Game::CreateDevice()
     m_graphicsMemory = std::make_unique<GraphicsMemory>(m_d3dDevice.Get());
     m_states = std::make_unique<CommonStates>(m_d3dDevice.Get());
 
-    m_model = Model::CreateFromSDKMESH(m_d3dDevice.Get(), L"C:\\dev\\Direct3D12-Benchmark\\Direct3D12-Benchmark\\Assets\\cup.sdkmesh");
-
+    m_model = Model::CreateFromSDKMESH(m_d3dDevice.Get(), L"C:\\dev\\Direct3D12-Benchmark\\Direct3D12-Benchmark\\Copper_coffee_pot.sdkmesh");
 
 
     ResourceUploadBatch resourceUpload(m_d3dDevice.Get());
@@ -413,10 +412,8 @@ void Game::CreateResources()
         // This template does not support exclusive fullscreen mode and prevents DXGI from responding to the ALT+ENTER shortcut
         DX::ThrowIfFailed(m_dxgiFactory->MakeWindowAssociation(m_window, DXGI_MWA_NO_ALT_ENTER));
 
-        m_view = Matrix::CreateLookAt(Vector3(2.f, 2.f, 2.f),
-            Vector3::Zero, Vector3::UnitY);
-        m_proj = Matrix::CreatePerspectiveFieldOfView(XM_PI / 4.f,
-            float(backBufferWidth) / float(backBufferHeight), 0.1f, 10.f);
+        m_view = Matrix::CreateLookAt(Vector3(8.f, 2.f, 2.f),Vector3::Zero, Vector3::UnitY);
+        m_proj = Matrix::CreatePerspectiveFieldOfView(XM_PI / 4.f,float(backBufferWidth) / float(backBufferHeight), 0.1f, 10.f);
     }
 
     // Obtain the back buffers for this window which will be the final render targets

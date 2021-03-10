@@ -1,0 +1,15 @@
+# Blender MTL File: 'None'
+# Material Count: 1
+
+newmtl Default_OBJ.001
+Ns 122.002070
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump Copper_Coffee_pot_Normal.jpg
+map_Kd Copper_Coffee_pot_diffuse.jpg
+map_Ks Copper_Coffee_pot_Specular.jpg
