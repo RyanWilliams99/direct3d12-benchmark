@@ -1,7 +1,7 @@
 # Blender MTL File: 'None'
 # Material Count: 1
 
-newmtl viking-room.png
+newmtl Texture1
 Ns 179.999996
 Ka 1.000000 1.000000 1.000000
 Kd 1.000000 1.000000 1.000000
@@ -10,4 +10,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd viking-room.png
+map_Kd C:\\Users\\Ryan\\Downloads\\New folder (2)\\source\\texture.png
