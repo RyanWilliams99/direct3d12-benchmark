@@ -302,7 +302,7 @@ void Game::CreateDevice()
     m_graphicsMemory = std::make_unique<GraphicsMemory>(m_d3dDevice.Get());
     m_states = std::make_unique<CommonStates>(m_d3dDevice.Get());
 
-    m_model = Model::CreateFromSDKMESH(m_d3dDevice.Get(), L"C:\\dev\\Direct3D12-Benchmark\\Direct3D12-Benchmark\\viking-room.sdkmesh");
+    m_model = Model::CreateFromSDKMESH(m_d3dDevice.Get(), L"C:\\dev\\direct3d12-benchmark\\direct3d12-benchmark\\viking-room.sdkmesh");
 
 
     ResourceUploadBatch resourceUpload(m_d3dDevice.Get());
