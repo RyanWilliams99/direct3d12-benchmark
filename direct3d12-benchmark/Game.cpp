@@ -116,7 +116,7 @@ void Game::Clear()
         static_cast<INT>(m_backBufferIndex), m_rtvDescriptorSize);
     CD3DX12_CPU_DESCRIPTOR_HANDLE dsvDescriptor(m_dsvDescriptorHeap->GetCPUDescriptorHandleForHeapStart());
     m_commandList->OMSetRenderTargets(1, &rtvDescriptor, FALSE, &dsvDescriptor);
-    m_commandList->ClearRenderTargetView(rtvDescriptor, Colors::CornflowerBlue, 0, nullptr);
+    m_commandList->ClearRenderTargetView(rtvDescriptor, Colors::Black, 0, nullptr);
     m_commandList->ClearDepthStencilView(dsvDescriptor, D3D12_CLEAR_FLAG_DEPTH, 1.0f, 0, 0, nullptr);
 
     // Set the viewport and scissor rect.
@@ -304,7 +304,6 @@ void Game::CreateDevice()
 
     m_model = Model::CreateFromSDKMESH(m_d3dDevice.Get(), L"C:\\dev\\direct3d12-benchmark\\direct3d12-benchmark\\viking-room.sdkmesh");
 
-
     ResourceUploadBatch resourceUpload(m_d3dDevice.Get());
 
     resourceUpload.Begin();
@@ -412,8 +411,8 @@ void Game::CreateResources()
         // This template does not support exclusive fullscreen mode and prevents DXGI from responding to the ALT+ENTER shortcut
         DX::ThrowIfFailed(m_dxgiFactory->MakeWindowAssociation(m_window, DXGI_MWA_NO_ALT_ENTER));
 
-        m_view = Matrix::CreateLookAt(Vector3(8.f, 4.f, 2.f),Vector3::Zero, Vector3::UnitY);
-        m_proj = Matrix::CreatePerspectiveFieldOfView(XM_PI / 4.f,float(backBufferWidth) / float(backBufferHeight), 0.1f, 10.f);
+        m_view = Matrix::CreateLookAt(Vector3(0.5f, 0.5f, 0.5f),Vector3::Zero, Vector3::UnitY);
+        m_proj = Matrix::CreatePerspectiveFieldOfView(XM_PI / 4.f, float(backBufferWidth) / float(backBufferHeight), 0.1f, 10.f);
     }
 
     // Obtain the back buffers for this window which will be the final render targets
