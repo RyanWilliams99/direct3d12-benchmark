@@ -302,7 +302,7 @@ void Game::CreateDevice()
     m_graphicsMemory = std::make_unique<GraphicsMemory>(m_d3dDevice.Get());
     m_states = std::make_unique<CommonStates>(m_d3dDevice.Get());
 
-    m_model = Model::CreateFromSDKMESH(m_d3dDevice.Get(), L"C:\\dev\\direct3d12-benchmark\\direct3d12-benchmark\\viking-room.sdkmesh");
+    m_model = Model::CreateFromSDKMESH(m_d3dDevice.Get(), L"C:\\dev\\direct3d12-benchmark\\direct3d12-benchmark\\mug.sdkmesh");
 
     ResourceUploadBatch resourceUpload(m_d3dDevice.Get());
 
@@ -411,7 +411,7 @@ void Game::CreateResources()
         // This template does not support exclusive fullscreen mode and prevents DXGI from responding to the ALT+ENTER shortcut
         DX::ThrowIfFailed(m_dxgiFactory->MakeWindowAssociation(m_window, DXGI_MWA_NO_ALT_ENTER));
 
-        m_view = Matrix::CreateLookAt(Vector3(0.5f, 0.5f, 0.5f),Vector3::Zero, Vector3::UnitY);
+        m_view = Matrix::CreateLookAt(Vector3(5.0f, 5.0f, 5.0f),Vector3::Zero, Vector3::UnitY);
         m_proj = Matrix::CreatePerspectiveFieldOfView(XM_PI / 4.f, float(backBufferWidth) / float(backBufferHeight), 0.1f, 10.f);
     }
 
