@@ -87,7 +87,6 @@ void Game::Render()
     // TODO: Add your rendering code here.
     m_graphicsMemory->Commit(m_commandQueue.Get());
 
-
     ID3D12DescriptorHeap* heaps[] = { m_modelResources->Heap(), m_states->Heap() };
     m_commandList->SetDescriptorHeaps(static_cast<UINT>(std::size(heaps)), heaps);
 
