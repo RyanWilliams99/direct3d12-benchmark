@@ -110,7 +110,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
             break;
         }
     }
-    
+
 
     g_game.reset();
 
@@ -122,7 +122,6 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
 
     /* Getting number of milliseconds as a double. */
     duration<double, std::milli> ms_double = t2 - t1;
-
 
     std::ofstream myfile;
     myfile.open("reults.txt");
