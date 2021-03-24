@@ -4,6 +4,8 @@
 
 #include "pch.h"
 #include "Game.h"
+#include <iostream>
+#include <fstream>
 
 using namespace DirectX;
 
@@ -24,6 +26,17 @@ LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 // Entry point
 int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR lpCmdLine, _In_ int nCmdShow)
 {
+
+    using std::chrono::high_resolution_clock;
+    using std::chrono::duration_cast;
+    using std::chrono::duration;
+    using std::chrono::milliseconds;
+
+    auto t1 = high_resolution_clock::now();
+
+
+
+
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
 
@@ -92,12 +105,34 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
         else
         {
             g_game->Tick();
+            printf("Drawn a frame");
+            //BREAK
+            break;
         }
     }
+    
 
     g_game.reset();
 
-    return static_cast<int>(msg.wParam);
+
+    auto t2 = high_resolution_clock::now();
+
+    /* Getting number of milliseconds as an integer. */
+    auto ms_int = duration_cast<milliseconds>(t2 - t1);
+
+    /* Getting number of milliseconds as a double. */
+    duration<double, std::milli> ms_double = t2 - t1;
+
+
+    std::ofstream myfile;
+    myfile.open("reults.txt");
+    myfile << ms_int.count() << "ms\n";
+    myfile << ms_double.count() << "ms";
+    myfile.close();
+
+    return 0;
+
+    //return static_cast<int>(msg.wParam);
 }
 
 // Windows procedure
