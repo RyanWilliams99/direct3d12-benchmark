@@ -107,7 +107,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
             g_game->Tick();
             printf("Drawn a frame");
             //BREAK
-            break;
+            //break;
         }
     }
 
@@ -124,9 +124,8 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
     duration<double, std::milli> ms_double = t2 - t1;
 
     std::ofstream myfile;
-    myfile.open("reults.txt");
-    myfile << ms_int.count() << "ms\n";
-    myfile << ms_double.count() << "ms";
+    myfile.open("C:\\dev\\direct3d12-benchmark\\x64\\Release\\reults.txt", std::ios::app);
+    myfile << ms_double.count() << "ms\n";
     myfile.close();
 
     return 0;
