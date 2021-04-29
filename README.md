@@ -1,7 +1,5 @@
 # direct3d12-benchmark
 
-Opens a precompiled .sdkmesh file and renders to screen
-
 To build
 1. Check you have Windows 10 SDK (19041 is recommended)
 2. Check you have Windows 10 (May 2020 Update a.k.a. Version 2004 is recommended)
